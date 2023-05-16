@@ -1,17 +1,12 @@
-# -*- coding: utf-8 -*-
 !pip install opendatasets --upgrade
-
 import opendatasets as od
 
 dataset_url = 'https://www.kaggle.com/alxmamaev/flowers-recognition'
-
 od.download(dataset_url)
-
 data_dir = './flowers-recognition/flowers'
 
 import os
 os.listdir(data_dir)
-
 for cls in os.listdir(data_dir):
     print(cls, ':', len(os.listdir(data_dir + '/' + cls)))
 
@@ -58,8 +53,6 @@ valid_dl = DataLoader(valid_ds,
                     batch_size, 
                     num_workers=2, 
                     pin_memory=True) 
-
-
 
 """
  4: Instead of loading the dataset into the cpu and then moving it to the gpu for training (pin_memory),
